@@ -1,5 +1,12 @@
 
+S=scripts
+SCRIPT=$S/skeleton.py
+
 all:
-	echo "Na?" | python3 skeleton.py --smiley ':('
-	echo "Na?" | python3 skeleton.py
+	python3 $(SCRIPT) --help
+	@echo
+	echo "Na?" | python3 $(SCRIPT) --smiley ':('
+	@echo
+	echo "Na?" | python3 $(SCRIPT)
+	@echo
 
