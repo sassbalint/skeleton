@@ -17,6 +17,16 @@ def skeleton(text, smiley):
     return f'{text} {smiley}'
 
 
+def main():
+    """Main. A simple stdin -> stdout filter."""
+    # get CLI arguments
+    args = get_args()
+
+    # stdin -> stdout identity filter
+    for line in sys.stdin:
+        print(skeleton(line.strip(), args.smiley))
+
+
 def get_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
@@ -31,14 +41,6 @@ def get_args():
     
     return parser.parse_args()
 
-def main():
-    """Main. A simple stdin -> stdout filter."""
-    # get CLI arguments
-    args = get_args()
-
-    # stdin -> stdout identity filter
-    for line in sys.stdin:
-        print(skeleton(line.strip(), args.smiley))
 
 if __name__ == '__main__':
     main()
