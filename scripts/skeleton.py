@@ -24,7 +24,10 @@ def main():
 
     # stdin -> stdout identity filter
     for line in sys.stdin:
-        print(skeleton(line.strip(), args.smiley))
+        result = skeleton(line.strip(), args.smiley)
+        print(result)
+        if args.duplicate:
+            print(result)
 
 
 def get_args():
@@ -33,11 +36,19 @@ def get_args():
         description=__doc__,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
+    # string-valued argument
     parser.add_argument(
         '--smiley', '-s',
         help='add smiley',
         type=str,
-        default=':)')
+        default=':)'
+    )
+    # boolean argument: True if present, False if not present
+    parser.add_argument(
+        '--duplicate', '-d',
+        help='do something twice',
+        action='store_true'
+    )
     
     return parser.parse_args()
 
