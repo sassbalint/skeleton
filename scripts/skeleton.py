@@ -38,14 +38,14 @@ def get_args():
     )
     # string-valued argument
     parser.add_argument(
-        '--smiley', '-s',
+        '-s', '--smiley',
         help='add smiley',
         type=str,
         default=':)'
     )
     # boolean argument: True if present, False if not present
     parser.add_argument(
-        '--duplicate', '-d',
+        '-d', '--duplicate',
         help='do something twice',
         action='store_true'
     )
