@@ -49,7 +49,8 @@ def get_args():
     parser.add_argument(
         '-d', '--duplicate',
         help='do something twice',
-        action='store_true'
+        action='store_true',
+        default=argparse.SUPPRESS
     )
     
     return parser.parse_args()
