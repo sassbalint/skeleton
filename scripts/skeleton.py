@@ -44,13 +44,16 @@ def get_args():
         help='add smiley',
         type=str,
         default=':)'
+        # vagy:
+        #required=True,
+        #type=str,
+        #default=argparse.SUPPRESS
     )
     # boolean argument: True if present, False if not present
     parser.add_argument(
         '-d', '--duplicate',
         help='do something twice',
-        action='store_true',
-        default=argparse.SUPPRESS
+        action='store_true'
     )
     
     return parser.parse_args()
