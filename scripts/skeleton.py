@@ -19,10 +19,7 @@ def skeleton(text, smiley):
 
 def main():
     """Main. A simple stdin -> stdout filter."""
-    # get CLI arguments
     args = get_args()
-    # ... as a dict!
-    args_dict = vars(args)
 
     # stdin -> stdout identity filter
     for line in sys.stdin:
